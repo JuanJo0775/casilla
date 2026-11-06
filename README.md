@@ -1,37 +1,33 @@
-# .edubot
+# Casilla
 
-Automatización para docentes: convierte las planillas de calificaciones escritas a mano en notas cargadas en el sistema de la institución.
+Del papel al sistema, sin teclear casilla por casilla.
 
-> Este repositorio es una vitrina del proyecto. El código fuente es privado.
+Casilla es una aplicación para docentes que convierte la foto de una planilla de notas escrita a mano en notas cargadas en el sistema de gestión escolar de la institución. Un trabajo de 2 horas se resuelve fácilmente en unos 10 minutos.
+
+*Este repositorio es una vitrina del proyecto. El código fuente es privado.*
 
 ## El problema
-Pasar las notas de una planilla de papel a la plataforma escolar es un trabajo manual, repetitivo y propenso a errores: una tarea de unas 2 horas por curso.
+
+Pasar las notas de una planilla de papel al sistema es un trabajo manual, repetitivo y propenso a errores. Una planilla de 22 estudiantes son 86 casillas para teclear una por una.
 
 ## La solución
-Una foto de la planilla entra por un lado; por el otro, las notas quedan cargadas en la casilla correcta de cada estudiante. Un trabajo de 2 horas se resuelve fácilmente en unos 10 minutos.
 
-## Cómo funciona
-1. Foto de la planilla.
-2. Reconocimiento con visión por IA de nombres, columnas y notas.
-3. Revisión humana: el docente valida lo reconocido antes de guardar.
-4. Emparejamiento por nombre con la lista real de estudiantes.
-5. Recálculo de las notas derivadas.
-6. Carga en la plataforma y verificación automática campo por campo.
+El docente sube la foto de la planilla y una IA de visión reconoce nombres, columnas y notas. Luego revisa lo reconocido en una tabla editable y confirma. Casilla empareja cada nota con el estudiante correcto por nombre, recalcula las notas derivadas, las carga en el sistema y verifica, campo por campo, que lo guardado coincida. También incluye un generador de planillas en blanco para cerrar el circuito completo.
 
 ## Estado
-- Fase 1: prueba de concepto con automatización de procesos (RPA), completa y probada en vivo con un curso real.
-- Fase 2: núcleo en Python, sin RPA, en curso (incluye cuentas de usuario y planes de uso).
-- Fases 3 y 4: aplicación local y producto web, planeadas.
-- Monetización en avance; aún sin pasarela de pagos.
+
+El motor de reconocimiento y carga está completo y probado en vivo con un curso real. La aplicación local (FastAPI y Next.js) está completa. El producto web está en desarrollo: las cuentas de usuario y los planes de uso ya están construidos; faltan la pasarela de pago, el despliegue y HTTPS.
 
 ## Principios
-- Revisión humana obligatoria antes de guardar.
-- Privacidad: el proyecto maneja calificaciones de menores; no se publican datos reales ni credenciales.
+
+La revisión humana es obligatoria antes de guardar: nunca se guarda a ciegas. Casilla no conserva notas ni nombres de estudiantes; el historial registra qué se cargó y cuándo. Este proyecto maneja calificaciones de menores, por eso no se publican datos reales ni credenciales.
 
 ## Tecnologías
-Python, UiPath, Google Gemini (visión con IA), Alembic (migraciones de base de datos) y GitHub Actions (pruebas automatizadas).
+
+Python, FastAPI, Next.js, TypeScript, PostgreSQL, Alembic, Google Gemini (visión con IA), GitHub Actions (integración continua y pruebas) y un sistema de diseño propio. La prueba de concepto inicial se hizo con UiPath.
 
 ## Contacto
-Juan José Naranjo Bocanegra · [LinkedIn](https://www.linkedin.com/in/juan-jose-naranjo-bocanegra-375673449/)
+
+Juan José Naranjo Bocanegra · LinkedIn: https://www.linkedin.com/in/juan-jose-naranjo-bocanegra-375673449/
 
 © 2026 Juan José Naranjo Bocanegra. Todos los derechos reservados.
